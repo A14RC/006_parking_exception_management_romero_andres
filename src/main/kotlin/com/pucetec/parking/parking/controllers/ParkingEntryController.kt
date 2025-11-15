@@ -21,13 +21,18 @@ class ParkingEntryController(
     }
 
     @GetMapping("/{id}")
-    fun getEntryById(@PathVariable id: Long): ParkingEntry? {
+    fun getEntryById(@PathVariable id: Long): ParkingEntry {
         return parkingEntryService.getEntryById(id)
     }
 
-    // salida del vehículo (POST para registrar exitTime)
     @PostMapping("/exit/{plate}")
     fun registerExit(@PathVariable plate: String): ParkingEntry {
         return parkingEntryService.registerExit(plate)
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteEntry(@PathVariable id: Long): String {
+        parkingEntryService.deleteEntry(id)
+        return "Entry with id $id deleted successfully."
     }
 }

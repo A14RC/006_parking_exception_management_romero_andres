@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ParkingEntryRepository : JpaRepository<ParkingEntry, Long> {
-
     fun findByPlate(plate: String): ParkingEntry?
+    fun findByPlateAndExitTimeIsNull(plate: String): ParkingEntry? // para validar duplicados
 }

@@ -18,5 +18,7 @@ data class ParkingEntry(
     val ownerName: String,
 
     @Column(nullable = false)
-    val entryTime: LocalDateTime = LocalDateTime.now()
+    val entryTime: LocalDateTime = LocalDateTime.now(),
+
+    var exitTime: LocalDateTime? = null
 )

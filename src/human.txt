@@ -1,0 +1,4 @@
+Lo que más me costó fue manejar la salida de los autos y evitar que se lanzara el error 500.
+Tuve que ajustar cómo se buscaba la placa y controlar los casos en los que no existía.
+También me enredé validando que las placas cumplieran con el formato correcto y que no se repitieran.
+Postman fue clave para probar todo y entender los errores.

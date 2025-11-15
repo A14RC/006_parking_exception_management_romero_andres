@@ -11,12 +11,15 @@ data class ParkingEntry(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     val plate: String,
 
     @Column(nullable = false)
     val ownerName: String,
 
     @Column(nullable = false)
-    val entryTime: LocalDateTime = LocalDateTime.now()
+    var entryTime: LocalDateTime = LocalDateTime.now(),
+
+    @Column(nullable = true)
+    var exitTime: LocalDateTime? = null
 )
